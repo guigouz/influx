@@ -1,0 +1,13 @@
+#summary What Influx expects in an application directory
+#labels Phase-Implementation
+
+The base application layout Influx understands is
+ # `index.php` - The influx code (everything you need, besides your app, is here)
+ # `_config.php` - Framework-wide configuration _optional_
+ # `app` - The APP dir
+  # `_config.php` - Application-specific configuration _optional_
+  # `name.php` - Code for the `NameController` _this is an example_
+  # `views` - Directory containing the views
+  # `layout.php` - The default layout used _optional_
+   # `name` - Views for `NameController` _this is an example_
+    # `action.php` - View for the `action()` action on `NameController` _this is an example_
