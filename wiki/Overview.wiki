@@ -31,9 +31,12 @@ class SomeController extends Controller {
 }}}
 ===Invoking controllers and passing parameters===
 Influx automatically exports all your controller actions so they can be accessed by the browser.
-When a user accesses _http://domain.com/index.php?/some/action_, Influx will instantiate a new _SomeController_ and call its _action()_ action.
-Parameters are passed automatically to the function, and the _$this->argv_ variable (inside a controller) retains an array of what was passed to the action,  for instance, when a user accesses _http://domain.com/index.php?/some/other/parameter/is/nice_, Influx will instantiate _SomeController_ and call _other('parameter', 'is', 'nice')_.
-To create a private function in a controller, just prepend it with an underscore. Any access to _action will be denied.
+
+When a user accesses _http://domain.com/index.php?/some/action_, Influx will instantiate a new _!SomeController_ and call its _action()_ action.
+
+Parameters are passed automatically to the function, and the _$this->argv_ variable (inside a controller) retains an array of what was passed to the action,  for instance, when a user accesses _http://domain.com/index.php?/some/other/parameter/is/nice_, Influx will instantiate _!SomeController_ and call _other('parameter', 'is', 'nice')_.
+
+To create a private function in a controller, just prepend it with an underscore. Any access to \_action will be denied.
 
 ===Form data on controllers===
 Form (POST) data is always passed to the _$this->data['form']_ controller variable ($_POST is unset after that).
