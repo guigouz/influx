@@ -8,6 +8,6 @@ The base application layout Influx understands is
   # `_config.php` - Application-specific configuration _optional_
   # `name.php` - Code for the `NameController` _this is an example_
   # `views` - Directory containing the views
-   # `layout.php` - The default layout used _optional_
+   # `default.php` - The default layout used _optional_
    # `name` - Views for `NameController` _this is an example_
     # `action.php` - View for the `action()` action on `NameController` _this is an example_
