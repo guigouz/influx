@@ -1,5 +1,5 @@
 #summary How to get started with influx
-#labels Phase-Implementation,Phase-Deploy,Phase-Support
+#labels Phase-Implementation,Phase-Deploy,Phase-Support,Featured
 
 This application is included in the default Influx distribution, to run it, access
 http://your_site/influx/index.php?/products
