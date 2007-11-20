@@ -22,7 +22,11 @@ In this simple example, we'll have a simple shop with no user login, so we'll ha
 {{{
 <?php
 class ProductsController extends Controller {
-	
+
+	/**
+	 * Lists all the products in the store
+	 *
+	 */
 	function index() {
 		
 		// this might have come from a database, you know
@@ -38,7 +42,11 @@ class ProductsController extends Controller {
 {{{
 <?php
 class CartController extends Controller {
-	
+
+	/**
+	 * Lists the products in the shopping cart
+	 *
+	 */	
 	function index() {
 		
 		// Load the "Cart" session variable
@@ -47,13 +55,13 @@ class CartController extends Controller {
 		// Export that to the view (/app/views/cart/index.php)
 		$this->set('cart_contents', $cart_contents);
 	}
-	
+
+	/**
+	 * Displays the checkout form
+	 *
+	 */	
 	function checkout() {
-		// Check if the user submitted his/hers email address
-		if(isset($this->data['form']['email'])) {
-			// Time to checkout
-			redirect('/cart/confirm/'.$this->data['form']['email']);
-		}
+
 	}
 	
 	/**
@@ -75,12 +83,18 @@ class CartController extends Controller {
 		redirect('/products');
 		
 	}
-	
+
+	/**
+	 * Displays a message confirming the checkout
+	 *
+	 */
 	function confirm() {
 		// If no email was set, redirect to the cart contents
 		if(!isset($this->data['form']['email'])) {
 			redirect('/cart');
 		}
+		
+		// on a real app we'd at least send an email to the user
 		
 		// clean up the cart
 		session('cart', array());
