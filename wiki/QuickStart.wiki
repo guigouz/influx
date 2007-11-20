@@ -1,14 +1,14 @@
 #summary How to get started with influx
 #labels Phase-Implementation,Phase-Deploy,Phase-Support
 
+This application is included in the default Influx distribution, to run it, access
+http://your_site/influx/index.php?/products
+
 = 1. Requirements =
  * PHP4 (not tested with version 5, although it should work)
 
 = 2. Design your application =
 It's really important to define the controllers involved in the process before starting to code.
-
-This application is included in the default Influx distribution, to run it, access
-http://your_site/influx/index.php?/products
 
 In this simple example, we'll have a simple shop with no user login, so we'll have
  * !ProductsController, which will list the products available
