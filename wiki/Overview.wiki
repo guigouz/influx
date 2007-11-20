@@ -1,6 +1,8 @@
 #summary Influx View-Controller Overview
 #labels Phase-Design,Featured
 
+This is an overview of the architecture used by influx. [ApplicationSkeleton] and [API] present the guts of the framework, while [QuickStart] gives you a nice tutorial on how to deploy your first influx application.
+
 = The Components =
 
 The goal here is to simplify your application's organization, and let you focus on functionality.
