@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Mech: Default Layout</title>
+		<title>Influx: Default Layout</title>
 	</head>
 	<body>
 		<?=$_content?>

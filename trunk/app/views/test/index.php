@@ -20,4 +20,4 @@ I've created a form as an example on how to pass data between requests, so choos
 <hr/>
 <p><i><b>Influx</b> was written in 2007 in about 3 hours by Guilherme Barile (guigouz) due to his CakePHP addiction (just can't code the wrong way).
 He needed something light for a tiny application that didn't need all the extraordinary funcionality Cake offered.<br/>
-His website is <a href="http://guigo.us">guigo.us</a> (mostly in portuguese), and the Influx homepage is hosted there, under <a href="http://www.guigo.us/projects/influx">/projects/influx</a>, while its code is kindly hosted by google at <a href="http://code.google.com/p/influx">code.google.com/p/influx</a></i></p>
+His website is <a href="http://guigo.us">guigo.us</a> (mostly in portuguese), and the Influx homepage is hosted there, under <a href="http://www.guigo.us/projetos/influx">/projects/influx</a>, while its code is kindly hosted by google at <a href="http://code.google.com/p/influx">code.google.com/p/influx</a></i></p>

@@ -346,7 +346,7 @@ function url($to) {
  * @param $value [optional] Value for the variable, if empty returns the variable's value
  */
 function session($name, $value = null) {
-	if(!$value) {
+	if($value === null) {
 		if(isset($_SESSION[$name]))
 			return $_SESSION[$name];
 		else
