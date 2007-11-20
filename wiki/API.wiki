@@ -60,6 +60,7 @@ load("somesubdir/lib.php")  // loads /app/lib/somesubdir/lib.php
  * session($name, [$value])
  Reads or writes to the session
   `$name` Is the name of the variable to store, `$value` is the value for that variable, if empty returns the variable's value
+ For example
 {{{
 session('user', 'User Name'); // saves "User Name" to the session
 [...]
