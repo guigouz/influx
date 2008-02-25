@@ -1,6 +1,10 @@
 <?php
 class CartController extends Controller {
-	
+
+	/**
+	 * Lists the products in the shopping cart
+	 *
+	 */
 	function index() {
 		
 		// Load the "Cart" session variable
@@ -9,16 +13,20 @@ class CartController extends Controller {
 		// Export that to the view (/app/views/cart/index.php)
 		$this->set('cart_contents', $cart_contents);
 	}
-	
+
+	/**
+	 * Displays the checkout form
+	 *
+	 */
 	function checkout() {
-		// Check if the user submitted his/hers email address
-		if(isset($this->data['form']['email'])) {
-			// Time to checkout
-			redirect('/cart/confirm/'.$this->data['form']['email']);
-		}
+
 	}
 	
-	// Adds a product to the cart
+	/**
+	 * Adds a product to the cart
+	 * Please note that this function has no view. 
+	 * It just adds the product to the session and redirects back to the Products list
+	 */ 
 	function add($product) {
 		// load the cart
 		$cart = session('cart');
@@ -33,15 +41,18 @@ class CartController extends Controller {
 		redirect('/products');
 		
 	}
-	
-	function confirm($email = null) {
+
+	/**
+	 * Displays a message confirming the checkout
+	 *
+	 */
+	function confirm() {
 		// If no email was set, redirect to the cart contents
-		if(!$email) {
+		if(!isset($this->data['form']['email'])) {
 			redirect('/cart');
 		}
 		
-		// Set $email in the view
-		$this->set('email', $email);
+		// on a real app we'd at least send an email to the user
 		
 		// clean up the cart
 		session('cart', array());

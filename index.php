@@ -31,7 +31,7 @@ if(!defined('APP'))
 
 define('APP_ROOT', ROOT.APP.DS);
 
-$sn = dirname($_SERVER['SCRIPT_NAME']);
+$sn = dirname($_SERVER['PHP_SELF']);
 if($sn != "/") $sn .= '/';
 define('WEBROOT', $sn);
 
@@ -49,7 +49,7 @@ if(defined('CGI')) {
 	define('SCRIPT_NAME', 'index.php?');
 }
 else {
-	$cmd = @substr($_SERVER['PATH_INFO'],1);
+	$cmd = @substr($_SERVER['PHP_SELF'],1);
 	define('SCRIPT_NAME', 'index.php/');
 }
 
@@ -274,9 +274,15 @@ function css($file) {
  * Inserts an image tag (<img>)
  * @return 
  * @param $file The image file name
+ * @param $attrs Additional element attributes
  */
-function img($file) {
-	return "<img src=\"".WEBROOT.APP."/html/".$file."\"/>";
+function img($file, $attrs = array()) {
+	$a = "";
+	foreach($attrs as $key => $value) {
+		$a .= " $key=\"$value\"";
+	}
+	
+	return "<img src=\"".WEBROOT.APP."/html/".$file."\"$a/>";
 }
 
 /**

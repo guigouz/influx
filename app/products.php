@@ -1,6 +1,10 @@
 <?php
 class ProductsController extends Controller {
 	
+	/**
+	 * Lists all the products in the store
+	 *
+	 */
 	function index() {
 		
 		// this might have come from a database, you know
