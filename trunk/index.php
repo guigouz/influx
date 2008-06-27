@@ -37,20 +37,17 @@ define('WEBROOT', $sn);
 
 if(file_exists(APP_ROOT.'_config.php'))
 	include(APP_ROOT.'_config.php');
-	
-if(!defined('CGI'))
-	define('CGI', 1);
 
 if(!defined('LOGOUT_TRIGGER'))
 	define('LOGOUT_TRIGGER', "logout"); // there's LOGOUT_CALLBACK too
 	
-if(defined('CGI')) {
+if(!empty($_SERVER['argv'])) {
 	$cmd = @substr($_SERVER['argv'][0],1);
 	define('SCRIPT_NAME', 'index.php?');
 }
 else {
-	$cmd = @substr($_SERVER['PHP_SELF'],1);
-	define('SCRIPT_NAME', 'index.php/');
+	$cmd = @substr($_SERVER['QUERY_STRING'],1);
+	define('SCRIPT_NAME', 'index.php?');
 }
 
 // and then, we run
