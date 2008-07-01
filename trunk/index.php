@@ -104,6 +104,8 @@ class Controller {
 			Influx::renderFile($_view, $this->layout, $this->data);
 			
 		}
+		
+		$this->autoRender = false;
 	}
 	
 	function set($name, $value) {
